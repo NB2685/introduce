@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パーマカルチャーデザインラボ | 設計と実装</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS: Using the attached style file -->
+    <link rel="stylesheet" href="files/style_introduce.css">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-58VDB7VX');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLD3LDQYPS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LLD3LDQYPS');
+</script>
+
+    <!-- Favicon (Copied from index.html) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3clinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ffffff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a0a0a0;stop-opacity:1' /%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='1.5' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Crect width='64' height='64' fill='%230f0f0f' rx='12' /%3E%3Cpath d='M32 14 L48 24 L48 40 L32 50 L16 40 L16 24 Z' fill='none' stroke='url(%23g)' stroke-width='2' filter='url(%23glow)' /%3E%3C/svg%3E">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58VDB7VX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <canvas id="organic-line"></canvas>
+
+    <!-- ==============================================
+         HERO SECTION (Center Align)
+         ============================================== -->
+    <section class="sec-hero">
+        <div class="container" style="max-width: 1000px!important;">
+            <div class="hero-headline">
+                <p>循環は思想ではない。<br>設計と実装である。</p>
+            </div>
+            <!--div class="hero-subheadline">
+                <p>20年分の全プログラム<br>始動フェーズ突入</p>
+            </div-->
+        </div>
+    </section>
+
+    <!-- ==============================================
+         INTRO SECTION (Left Align)
+         ============================================== -->
+    <section class="sec-light-1">
+        <div class="container">
+        <div class="content-left">
+<p>今後、社会で非常に重要なポジションに<br>
+立つであろう<span class="strong">『ある３人』</span>を紹介したい。</p>
+
+<p class="oblique strong">パーマカルチャーデザインラボ：<br>
+<a href="https://www.permaculturedesignlab.com/" target="_blank">https://www.permaculturedesignlab.com/</a></p>
+
+
+            <div class="frame-comparison-wrapper">
+                <div class="frame-role frame-filler">
+                    <span class="frame-label">多くの人は<br class="sp-only">「パーマカルチャー」を</span>
+                    <div class="frame-description">
+                        <ul class="bullet-list">
+                    <li>自然にやさしい</li>
+                    <li>暮らしを見直す</li>
+                    <li>エコで丁寧</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+<p>といった価値観やライフスタイルとして<br class="sp-only">語る。</p>
+
+<p>だが、<span class="oblique strong">Permaculture Design Lab.</span><br>
+がやっていることは違う。</p>
+
+<p class="emphasis2">彼らが扱っているのは、<br>
+社会を壊さずに回し続けるための<br class="sp-only">設計技術だ。</p>
+
+        </div>
+    </div>
+    <div class="section-divider light"></div>
+</section>
+
+            <!-- Question -->
+    <section class="sec-light-2">
+        <div class="container">
+        <div class="content-left">
+            <h3 class="center">彼らが向き合っている<br class="sp-only">本質的な問い</h3>
+
+<div class="emphasis-warning">
+    <ul class="bullet-list">
+<li>食料・水・エネルギーを、<br class="sp-only">どうすれば<br class="pc-only">
+外部依存せず<br class="sp-only">循環させられるか</li>
+<li>都市と自然を分断せず、<br class="sp-only">同一システムとして<br>
+機能させられるか</li>
+<li>100年後、設計者がいなくなっても<br>
+機能し続ける構造をどう残すか</li>
+</ul>
+</div>
+
+<p><span class="oblique strong">Permaculture Design Lab.</span>は、<br>
+「思想を語る人たち」ではなく、</p>
+
+<div class="emphasis-conclusion">
+「失敗コストを引き受けながら<br>
+実験し続けてきた設計者集団」</div>
+
+<p>である。</p>
+
+            </div>
+        </div>
+            <div class="section-divider light"></div>
+</section>
+
+            <!-- Profile -->
+    <section class="sec-dark-1">
+        <div class="container">
+        <div class="content-left">
+
+<p class="sub-heading center">3人の創始者は、役割が<br>
+明確に分化している</p>
+
+<div style="margin:0 auto;">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DC3CqidPsft/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:600px; min-width:200px!important;  padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);text-align: center; top:-50px!important;
+    margin-left: 0px;
+    margin-right: 0px;">
+</blockquote>
+</div>
+<script async src="https://www.instagram.com/embed.js"></script>
+<h3 style="margin-bottom:20px;">庄司 正昭 <span style="font-size:70%">（写真左）</span></h3>
+            <div class="frame-comparison-wrapper" style="margin-top: 0px;">
+                <div class="frame-role frame-setter">
+                    <span class="frame-label">土地と時間の翻訳者</span>
+                    <div class="frame-description">
+                        <ul class="bullet-list">
+                    <li>古民家・里山・水脈・土壌を<br>
+                    「資産」として再生する<br class="sp-only">現場設計者</li>
+                    <li>日本的な暮らしの知恵を、<br>
+                    再利用可能な設計言語に落とす</li>
+                    <li>庭・畑・田・コミュニティを<br>
+                        一体として扱う稀有な実装者</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+<p>
+彼の仕事は<br>
+<span class="strong">「自然と仲良くする」</span><br>
+ことではない。</p>
+
+<p class="emphasis strong">
+土地が本来持っている性能を、<br>
+最大限に引き出す再起動作業だ。</p>
+
+            <div class="section-divider"></div>
+
+<div style="margin:0 auto;">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DC3CqidPsft/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:600px; min-width:200px!important;  padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);text-align: center; top:-50px!important;
+    margin-left: 0px;
+    margin-right: 0px;">
+</blockquote>
+</div>
+<h3 style="margin-bottom:20px;">大村 淳<span style="font-size:70%">（写真右）</span></h3>
+            <div class="frame-comparison-wrapper" style="margin-top: 0px;">
+                <div class="frame-role frame-setter">
+                    <span class="frame-label">水循環×都市設計の統合者</span>
+                    <div class="frame-description">
+                        <ul class="bullet-list">
+                    <li>フォレストガーデン設計</li>
+                    <li>サブ・アーバン（郊外）で<br>
+                    10年以上の長期実験</li>
+                    <li>国際的な水循環再生<br class="sp-only">プロジェクトに関与</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+<p class="emphasis2 strong">彼が見ているのは「畑」ではない。<br>
+流域・都市・気候・人間活動を貫く<br>
+水の構造そのものだ。</p>
+
+<p>気候危機に対して、<br>
+彼はスローガンではなく<br>
+<span class="strong">水循環という物理的レバー</span>で介入している。</p>
+
+            <div class="section-divider"></div>
+
+<div style="margin:0 auto;">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DC3CqidPsft/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:600px; min-width:200px!important;  padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);text-align: center; top:-50px!important;
+    margin-left: 0px;
+    margin-right: 0px;">
+</blockquote>
+</div>
+<h3 style="margin-bottom:20px;">川村 若菜<span style="font-size:70%">（写真中）</span></h3>
+            <div class="frame-comparison-wrapper" style="margin-top: 0px;">
+                <div class="frame-role frame-setter">
+                    <span class="frame-label">都市スケールでの可視化と<br class="sp-only">実装翻訳者</span>
+                    <div class="frame-description">
+                        <ul class="bullet-list">
+                    <li>都市型パーマカルチャー</li>
+                    <li>公共空間・市街地での<br class="sp-only">フォレストガーデン</li>
+                    <li>イラストレーションによる<br class="sp-only">「理解可能な設計翻訳」</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+<p class="emphasis strong">複雑な循環構造は、<br>
+理解されなければ実装されない。</p>
+
+<p>彼女は、設計思想を社会に浸透させるための<br>
+翻訳回路を担っている。</p>
+
+
+                </div>
+            </div>
+</section>
+
+            <!-- GOAL -->
+    <section class="sec-dark-2">
+        <div class="container">
+        <div class="content-left">
+            <h3>なぜ俺がドキドキするのか</h3>
+
+<p><span class="oblique strong">Permaculture Design Lab.</span>は、<br>
+「良いことをしている団体」ではない。</p>
+
+<p>彼らは、</p>
+
+<div class="emphasis-warning">
+<ul class="bullet-list">
+<li>インフラ（食・水・土地）</li>
+<li>建築・都市</li>
+<li>教育・コミュニティ</li>
+<li>気候リスク</li>
+</ul>
+</div>
+
+<p class="emphasis2">これらを一つのシステムとして<br class="sp-only">扱う設計者だ。</p>
+
+            <div class="section-divider"></div>
+
+<p>これは</p>
+
+<div class="emphasis-warning">
+<ul class="bullet-list">
+<li>行政</li>
+<li>デベロッパー</li>
+<li>建築家</li>
+<li>水・エネルギー関係者</li>
+<li>社会設計に関わるすべての人間</li>
+</ul>
+</div>
+
+<p class="emphasis">が、本来もっと早く<br>
+出会うべき知性である。</p>
+
+        </div>
+    </div>
+    </section>
+
+    <section class="sec-light-2">
+        <div class="container">
+            <div class="content-left">
+
+<div class="sacred-quote light-mode">パーマカルチャーは<br>
+「やさしさ」ではない<br>
+耐久性の設計である</div>
+
+<p>彼らの活動は派手ではない。</p>
+
+<p class="emphasis2 strong">だが、壊れない。逃げない。<br>
+継続する。</p>
+
+<p class="strong">600年後、<br>
+思想が忘れられても、<br>
+彼らの設計が残っていれば、<br>
+未来の人間はその恩恵を受ける。</p>
+
+<p>それが、<br>
+<span class="oblique strong">Permaculture Design Lab.</span><br>
+の仕事だ。</p>
+
+
+</div>
+</div>
+</section>
+
+    <!-- ==============================================
+         FINAL FORM SECTION (Light)
+         ============================================== -->
+    <section class="sec-light-1">
+        <div class="container">
+            <div class="content-left">
+
+<p>もしあなたが</p>
+
+<div class="emphasis-warning">
+<ul class="bullet-list">
+<li>建築</li>
+<li>水</li>
+<li>エネルギー</li>
+<li>社会インフラ</li>
+<li>都市と自然の統合</li>
+</ul>
+</div>
+
+<p>を<span class="strong">「本気で設計したい側の人間」</span>なら、<br>
+ここは一度、じっくり覗いてほしい。</p>
+
+<p class="emphasis">流行ではなく、<br>
+構造を扱っている3人だから。</p>
+
+<p class="oblique strong">パーマカルチャーデザインラボ：<br>
+<a href="https://www.permaculturedesignlab.com/" target="_blank">https://www.permaculturedesignlab.com/</a></p>
+
+<p>ぜひ、あなた自身の感想やフィードバックを<br>
+教えてください。</p>
+
+<p class="strong">世界の見え方が変わる瞬間は、<br>
+いつも静かに訪れます。</p>
+
+
+            <!-- FORM REPEAT -->
+            <div style="margin-top: 40px;">
+                <form id="submission-form-2" class="mirai-form light-mode-form" action="https://x-sennin.com/api/register/tagandmail.php" method="POST">
+                     <!-- Config fields -->
+                    <input type="hidden" name="tag_id" value="13777624">
+                    <input type="hidden" name="form_id" value="permaculturedesignlab_form_bottom">
+                    
+                    <div class="form-group">
+                        <label for="name-2">名前: <span class="required">*</span></label>
+                        <input type="text" id="name-2" name="name" placeholder="お名前" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-2">メルアド: <span class="required">*</span></label>
+                        <input type="email" id="email-2" name="email" placeholder="メールアドレス" required>
+                    <div class="email-suggestion" style="color:#d9534f; font-size:0.9em; margin-top:5px;"></div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="message-2">感想: <span class="required">*</span></label>
+                        <textarea id="message-2" name="message" rows="8" placeholder="感想を記入" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">送信</span>
+                        <span class="btn-loader"></span>
+                    </button>
+
+                    <!-- Success Message Container -->
+                    <div class="success-message" style="display:none; text-align:center; padding:20px;">
+                        <p class="strong">ありがとうございます。<br>送信が完了しました。</p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="section-divider light"></div>
+
+                <div class="signature-wrapper" style="margin-bottom: 100px;">
+                    <picture>
+                        <source srcset="https://xtribe.me/signature/senninsan.webp" type="image/webp">
+                        <img src="https://xtribe.me/signature/senninsan.png" alt="仙人さん" class="signature-image">
+                    </picture>
+                </div>
+
+        </div>
+    </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://xtribe.me/5paths/tokusho.html" target="_blank">特商法</a> 　　 
+            <a href="https://xtribe.me/5paths/privacy.html" target="_blank">プライバシーポリシー</a>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../affiliateplan/app-organicline.js" defer></script>
+    <script>
+    // Form Submission Logic (Vanilla JS to handle JSON response from PHP)
+    document.addEventListener('DOMContentLoaded', () => {
+        const forms = document.querySelectorAll('form.mirai-form');
+
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const btnText = submitBtn.querySelector('.btn-text');
+                const btnLoader = submitBtn.querySelector('.btn-loader');
+                const successMessage = form.querySelector('.success-message');
+                const formGroups = form.querySelectorAll('.form-group');
+
+                // Loading State
+                submitBtn.disabled = true;
+                btnText.style.opacity = '0';
+                btnLoader.style.display = 'block';
+
+                const formData = new FormData(form);
+
+                // ▼▼▼ 追加 ▼▼▼
+                formData.append('_page_url', window.location.href);
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    // Note: tagandmail.php might return JSON directly
+                    return response.json().catch(() => {
+                        // Fallback if response isn't valid JSON (rare but possible with PHP errors)
+                        return { success: false, message: '通信エラーが発生しました' };
+                    });
+                })
+                .then(data => {
+                    if (data.success) {
+                        // Success Animation
+                        formGroups.forEach(group => group.style.display = 'none');
+                        submitBtn.style.display = 'none';
+                        successMessage.style.display = 'block';
+                    } else {
+                        alert('エラー: ' + (data.message || '送信に失敗しました'));
+                        resetButton();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('通信エラーが発生しました。');
+                    resetButton();
+                });
+
+                function resetButton() {
+                    submitBtn.disabled = false;
+                    btnText.style.opacity = '1';
+                    btnLoader.style.display = 'none';
+                }
+            });
+        });
+    });
+    </script>
+
+
+<!-- タイプミスチェックライブラリ -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mailcheck/1.1.1/mailcheck.min.js"></script>
+
+<script>
+// Mailcheck機能（複数フォーム対応版）
+$(document).ready(function() {
+    // name="email" を持つすべてのinput要素を対象にする
+    const emailInputs = $('input[name="email"]');
+
+    // ドメインの定義（日本でよく使われるものも含める）
+    const domains = ['gmail.com', 'yahoo.co.jp', 'icloud.com', 'outlook.jp', 'outlook.com', 'hotmail.com', 'softbank.ne.jp', 'docomo.ne.jp', 'ezweb.ne.jp'];
+
+    emailInputs.on('blur', function() {
+        const $currentInput = $(this); // 操作中の入力欄
+        // その入力欄のすぐ下にある suggestion ボックスを探す
+        const $suggestionBox = $currentInput.next('.email-suggestion');
+
+        // 前回の提案をクリア
+        $suggestionBox.empty();
+
+        // Mailcheckを実行
+        $currentInput.mailcheck({
+            domains: domains, // 上で定義したドメインを使用
+            suggested: function(element, suggestion) {
+                // 提案があった場合の処理
+                const correctedEmail = suggestion.full;
+                
+                // 提案メッセージを構築
+                // クリックしやすいように装飾を追加
+                const message = `もしかして： <span class="correction-link" 
+                                style="font-weight: bold; cursor: pointer; text-decoration: underline;" 
+                                data-suggested-email="${correctedEmail}">
+                                ${correctedEmail}</span> ですか？`;
+                
+                $suggestionBox.html(message);
+            },
+            empty: function(element) {
+                // 提案がなかった場合
+                $suggestionBox.empty();
+            }
+        });
+    });
+
+    // 提案されたメールアドレスをクリックした時の処理
+    // （動的に追加された要素なので、documentに対してイベント委譲を行う）
+    $(document).on('click', '.correction-link', function() {
+        const $link = $(this);
+        const correctedEmail = $link.data('suggested-email');
+        
+        // クリックされたリンクが含まれる suggestion ボックスを探す
+        const $box = $link.closest('.email-suggestion');
+        // そのボックスの直前にある input 要素を探す
+        const $targetInput = $box.prev('input[name="email"]');
+
+        // 値を修正
+        $targetInput.val(correctedEmail);
+        
+        // メッセージを消去してフォーカスを戻す
+        $box.empty();
+        $targetInput.focus();
+    });
+});
+</script>
+</body>
+</html>
